@@ -11,7 +11,7 @@ function saveNewRecord(obj){
         data : JSON.stringify(obj),
         
         success: function(){
-            //$( "#feeds" ).load( "doctor.html" );
+           
             console.log("Added"); 
             $("#alertSuccess").text("Saved Successfully.");
             $("#alertSuccess").show();

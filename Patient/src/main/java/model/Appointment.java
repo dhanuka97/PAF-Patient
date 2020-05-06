@@ -1,8 +1,9 @@
 package model;
 
 public class Appointment {
+	//not use
 	public int appointNo;
-	public String date;
+	public String  date;
 	public String time;
 	public String location;
 	public String pname;

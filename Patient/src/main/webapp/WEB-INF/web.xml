@@ -25,4 +25,14 @@
     <servlet-name>patient_serv</servlet-name>
     <url-pattern>/patient_serv</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PatientAPI</display-name>
+    <servlet-name>PatientAPI</servlet-name>
+    <servlet-class>com.fantasticfour.healthcare.healthCareApiProject.PatientAPI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PatientAPI</servlet-name>
+    <url-pattern>/PatientAPI</url-pattern>
+  </servlet-mapping>
 </web-app>

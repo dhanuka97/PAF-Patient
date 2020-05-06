@@ -1,3 +1,5 @@
+
+fetchResult();
 function saveNewRecord(obj){
     $.ajax({	
         headers: { 
@@ -25,8 +27,8 @@ function saveNewRecord(obj){
 }
 
 function fetchResult(){
-    var $details = $('#tablepatient');
-    $("#tablepatient").empty();
+    var $details = $('#orders');
+    $("#orders").empty();
     $.ajax({	
         headers: { 
             "Content-Type": "application/json"
@@ -36,18 +38,20 @@ function fetchResult(){
         dataType: 'json',
         success: function(result){
             console.log("fetched");
-            //console.log(result);
+            console.log(result);
             
             var data = JSON.parse(JSON.stringify(result));
             $.each(data, function(i, item) {
 
                 $details.append('<tr>'+
-							'<td>' + item.docID + '</td>' 
-							+ '<td>' + item.docName + '</td>' 
-							+ '<td>' + item.specialization + '</td>' 
-							+ '<td>' + item.contactNo + '</td>'	
-							+ '<td><button type="button" class="btn btn-info" onclick="View('+ item.docID +' )"  data-toggle="modal" data-target="#myModal">Edit</button></td>'
-						    + '<td><button type="button" class="btn btn-danger" onclick="myFunction2('+ item.docID +' )" data-toggle="modal" data-target="#exampleModal" >Delete</button></td>'
+							'<td>' + item.patientid+'</td>' 
+							+ '<td>' + item.patientName + '</td>' 
+							+ '<td>' + item.ContactNo + '</td>' 
+							+ '<td>' + item.gender+ '</td>'	
+							+ '<td>' + item.username+ '</td>'
+							+ '<td>' + item.password+ '</td>'	
+							+ '<td><button type="button" class="btn btn-info" onclick="View('+ item.patientid +' )"  data-toggle="modal" data-target="#myModal">Edit</button></td>'
+						    + '<td><button type="button" class="btn btn-danger" onclick="myFunction2('+ item.patientid +' )" data-toggle="modal" data-target="#exampleModal" >Delete</button></td>'
 							+ '</tr>')
 
                 console.log(item);

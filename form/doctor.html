@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Doctors</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+
+</head>
+
+<body>
+
+    <!-- area_start  -->
+    <div class="bradcam_area breadcam_bg_2 bradcam_overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Doctors</h3>
+                        <p><a href="#">Home /</a> Doctors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <!-- area_end  -->
+
+    <!--Form Start-->
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-3"></div>
+    		<div class="col-md-6">
+    			<h1 class="text-center">REGISTER</h1><br>
+
+    			<!--Form row start-->
+				<form id="formDoctor">
+                    <label class="label col-md-3 control-label" for="ExampleInput1">Doctor ID :</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="docID" name="docID" placeholder="Doctor ID" maxlength="6" required>
+                    </div><br>
+                    <!--Form row end-->
+
+                    <!--Form row start-->
+                    <label class="label col-md-3 control-label" for="ExampleInput1">Doctor Name :</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="docName" name="docName" placeholder="Doctor Name" required>
+                    </div><br>
+                    <!--Form row end-->
+
+                    <!--Form row start-->
+                    <label class="label col-md-3 control-label" for="ExampleInput1">Specialization :</label>
+                    <div class="col-md-9">
+                        <select class="form-control" id="ddlSpecialization" name="ddlSpecialization" required>
+                            <option value="0">- Select Specialization -</option>
+                            <option value="1">CARDILOGIST</option>
+                            <option value="2">NEUROLOGY</option>
+                            <option value="3">DERMATOLOGIST</option>
+                            <option value="4">SURGEON</option>
+                            <option value="5">OPHTHALMOLOGIST</option>
+                        </select><br>
+                    </div><br>
+                    <!--Form row end-->
+
+                    <!--Form row start-->
+                    <label class="label col-md-3 control-label" for="ExampleInput1">Contact No :</label>
+                    <div class="col-md-9">
+                        <input type="tel" class="form-control" id="docContactNo" name="docContactNo" placeholder="Contact No" maxlength="10" required pattern="[0]{1}[0-9]{9}">
+                    </div><br>
+                    <!--Form row end-->
+
+                    <!--Form row start-->
+                    <label class="label col-md-3 control-label" for="ExampleInput1">Password :</label>
+                    <div class="col-md-9">
+                        <input type="Password" class="form-control" id="docPassword" name="docPassword" placeholder="Password" maxlength="6" required>
+                        <small>Password must be <b>6</b> characters !</small>
+                    </div><br>
+                    <!--Form row end-->
+                    
+                    <div id="alertSuccess" class="alert alert-success"></div>
+                    <div id="alertError" class="alert alert-danger"></div><br>
+
+                    &nbsp; &nbsp;<button type="button" id="btnsubmit" class="boxed-btn31">Save</button>
+                    <!--&nbsp; &nbsp;<input type="hidden" id="hidbtnsubmit" name="hidbtnsubmit" value="">-->
+				</form>
+    		</div>
+    		<div class="col-md-3"></div>
+    	</div>
+    </div><br><br>
+    <!--Form End-->
+    
+
+    <!--Table Start-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <table class="table" style="width: 100%;" id="tableDoctor">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Doctor ID</th>
+                        <th scope="col">Doctor Name</th>
+                        <th scope="col">Specialization</th>
+                        <th scope="col">Contact No</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+
+                    <tbody id="tbl">
+
+                     
+                    </tbody>
+                </table>
+
+            <!-- Update Modal -->
+			  <div class="modal fade" id="myModal" role="dialog">
+			    <div class="modal-dialog modal-lg">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			         
+			        </div>
+			        <div class="modal-body">
+
+				          <div class="form-group">
+						    <label for="exampleInputEmail1" id="editBoxAppH">Doctor ID:</label> <br>
+						    <input type="text" class="form-control" id="editBox1" aria-describedby="emailHelp"> 
+						  </div>
+
+				          <div class="form-group">
+						    <label for="exampleInputEmail1">Doctor Name:</label>
+						    <input type="text" class="form-control" id="editBox2" aria-describedby="emailHelp"> 
+						  </div>
+
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">Specialization:</label>
+							    <select class="form-control" id="ddlSpecialization" name="ddlSpecialization" required>
+		                            <option value="0">- Select Specialization -</option>
+		                            <option value="1">CARDILOGIST</option>
+		                            <option value="2">NEUROLOGY</option>
+		                            <option value="3">DERMATOLOGIST</option>
+		                            <option value="4">SURGEON</option>
+		                            <option value="5">OPHTHALMOLOGIST</option>
+		                        </select> 
+						  </div>
+
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">Contact No:</label>
+						    <input type="tel" class="form-control" id="editBox3" aria-describedby="emailHelp"> 
+						  </div>
+
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">Password</label>
+						    <input type="Password" class="form-control" id="editBox4" aria-describedby="emailHelp"> 
+						  </div>
+					  
+			        </div>
+
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+					  <button type="button" class="btn btn-success" onclick="Update()" data-dismiss="modal">Save</button>
+			        </div>
+
+			      </div>
+			    </div>
+              </div>
+              
+            <!-- Delete Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Deleting Doctor</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                         <p class="text-danger">Are you sure want to delete this Doctor....?</p> <label for="exampleInputEmail1" id="docID" style="visibility: hidden;">Doctor Name</label> 
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                      <button type="button" class="btn btn-danger" onclick="Delete()" data-dismiss="modal" >Yes</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            </div>
+            
+        </div>
+    </div><br><br><br><br>
+    <!--Table End-->
+
+    <!-- JS here -->
+    <script src="js/main.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/service.js"></script>
+    
+
+<!--Form Validation-->
+    <script>
+        $(document).ready(function()
+        {
+            if($("#alertSuccess").text().trim() == "")
+            {
+                $("#alertSuccess").hide();
+            }
+            
+            $("#alertError").hide();
+            fetchResult();
+        });
+
+        //SAVE
+        $(document).on("click", "#btnsubmit", function(event)
+        {
+            $("#alertSuccess").text("");
+            $("#alertSuccess").hide();
+            $("#alertError").text("");
+            $("#alertError").hide();
+
+            //Form validatin
+            var status = validateForm();
+
+            //If not valid
+            if(status != true)
+            {
+                $("#alertError").text(status);
+                $("#alertError").show();
+                return;
+            }
+
+            //If valid
+            var doctor = Validation($("#docID").val().trim(), $("#docName").val().trim(), $("#ddlSpecialization").val(), $("#docContactNo").val().trim(), $("#docPassword").val().trim());
+            $("#tableDoctor").append(doctor);
+
+            var obj = {
+                "docID" : $("#docID").val(),
+                "docName" : $("#docName").val().trim(),
+                "specialization" :$("#ddlSpecialization option:selected").text(),
+                "contactNo" : $("#docContactNo").val().trim(),
+                "password" : $("#docPassword").val().trim()
+            }
+
+            saveNewRecord(obj);
+
+           
+        });
+
+        //REMOVE
+        /*$(document).on("click", ".remove", function(event)
+        {
+
+
+            $("#alertSuccess").text("Removed Successfully.");
+            $("#alertSuccess").show();
+        });*/
+
+    </script>
+
+
+
+
+
+</body>
+
+
+</html>

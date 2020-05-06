@@ -1,0 +1,77 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+ <script src="js/jquery-3.2.1.min.js">
+ </script> 
+ <script src="js/main.js"></script> 
+  <script src="js/service.js"></script> 
+</head>
+
+<body>
+
+		
+	
+ 
+ <div id="form-wrapper" style="max-width:500px;margin:auto"; >
+ 
+ <form id="formItem" name="formItem"> Patient name:   <input id="name" name="name" type="text"class="form-control form-control-sm"> 
+ 
+  <br> Patient NIC:   <input id="nic" name="nic" type="text"  class="form-control form-control-sm"> 
+ 
+  <br> Contact number:   <input id="con" name="con" type="text" class="form-control form-control-sm"> 
+ 
+  <br> User name:   <input id="uname" name="uname" type="text"class="form-control form-control-sm"> 
+  
+   <br> Password:   <input id="pass" name="pass" type="text"class="form-control form-control-sm"> 
+   
+   <br> Gender: <input id="gen" name="gen" type="text"class="form-control form-control-sm"> 
+   
+   
+   
+						  
+ 
+  <br>   <input id="btnSave" name="btnSave" type="button" value="Save"class="btn btn-primary">
+  <input type="hidden" id="hidItemIDSave"name="hidItemIDSave" value="">  
+  <div id="alertSuccess" class="alert alert-success"></div>  <div id="alertError" class="alert alert-danger"></div> 
+  </form> 
+ <br>
+ <br>
+ <br>
+</div>	
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                  <table class="table"  style="width: 100%;" id="tablepatient">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Patient ID</th>
+                        <th scope="col">Patient  Name</th>
+                        <th scope="col">Contact No</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">User name</th>
+                        <th scope="col">Password</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+
+                    <tbody id="tb">
+
+                     
+                    </tbody>
+                </table>
+
+			
+
+            </div>
+            
+        </div>
+    </div><br><br><br><br>
+ 
+ 
+ 
+   
+</body>
+</html>

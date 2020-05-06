@@ -1,7 +1,7 @@
 package model;
 
 public class Appointment {
-	//not use
+	//This
 	public int appointNo;
 	public String  date;
 	public String time;

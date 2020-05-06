@@ -7,4 +7,3 @@
 	<p>Visit <a href="http://jersey.java.net">Project Jersey website</a> formore information on Jersey!</p>
 </body>
 </html>
-

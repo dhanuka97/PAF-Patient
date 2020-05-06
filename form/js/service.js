@@ -50,7 +50,7 @@ function fetchResult(){
 							+ '<td>' + item.gender+ '</td>'	
 							+ '<td>' + item.username+ '</td>'
 							+ '<td>' + item.password+ '</td>'	
-							+ '<td><button type="button" class="btn btn-info" onclick="View('+ item.pnic +' )"  data-toggle="modal" data-target="#myModal">Edit</button></td>'
+							+ '<td><button type="button" class="btn btn-info"  onclick="View('+ item.pnic +' );hide();"  data-toggle="modal" data-target="#myModal">Edit</button></td>'
 						    + '<td><button type="button" class="btn btn-danger" onclick="DeleteResult('+ item.pnic +' )" data-toggle="modal" data-target="#exampleModal" >Delete</button></td>'
 							+ '</tr>')
 
@@ -64,7 +64,12 @@ function fetchResult(){
     });
 }
 
-
+function hide(){
+	
+	$("#btnUpdate").show();
+	
+	
+}
 
 //Delete
 function DeleteResult(no) {
@@ -88,22 +93,9 @@ function DeleteResult(no) {
 }
 
 //Update
-function UpdateResult(){
+function UpdateResult(obj){
 	var nic = $('#editBox1').text();
 	console.log(nic);
-	var obj = {
-			
-			
-			pnic :nic ,
-            pname : $("#editBox2").val(),
-            phonenumber :$("#editBox3").val().trim(),
-            username : $("#editBox5").val().trim(),
-            password : $("#editBox").val().trim(),
-            gender   :$("#editBox1").val().trim()
-		
-			 
-		    
-	};
 	$.ajax({	
 		 headers: { 
 		        'Accept': 'application/json',
@@ -117,12 +109,14 @@ function UpdateResult(){
 			
 			success: function(){
 				alert("Updated Successfully!");
+				 fetchResult();
 				
 			},
 			error: function(xhr, status, error) {
 				  alert(xhr.responseText);
 				}
 	});
+	
 }
 
 

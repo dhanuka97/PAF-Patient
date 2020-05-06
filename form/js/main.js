@@ -1,7 +1,9 @@
 $(document).ready(function() {
+	$("#btnUpdate").hide();
 	$("#alertSuccess").hide();
 	$("#alertError").hide();
 	fetchResult();
+	
 });
 
 $(document).on("click", "#btnSave", function(event){ 
@@ -42,6 +44,46 @@ $(document).on("click", "#btnSave", function(event){
 	 
 	 
 }); 
+///////////////////////////////////////////////////////////////////////////
+
+$(document).on("click", "#btnUpdate", function(event){ 
+	
+	
+	
+	var status =  validateItemForm();
+	console.log(status);
+	//var status = false;
+	 
+	 // If not valid------------------- 
+	if (status != true){   $("#alertError").text(status);   $("#alertError").show();   return;  } 
+	else if(status ==true){
+		 //If valid
+		
+         
+        var obj = {
+        	"pnic" : $("#nic").val().trim(),
+            "pname" : $("#name").val(),
+            "phonenumber" :$("#con").val().trim(),
+            "username" : $("#uname").val().trim(),
+            "password" : $("#pass").val().trim(),
+            "gender"   :$("#gen").val().trim()
+        }
+        
+        
+        
+
+        UpdateResult(obj);
+        console.log(obj);
+		
+		
+		
+	}
+	 
+	 
+}); 
+
+
+///////////////////////////////////////////////////
 
 function validateItemForm() { 
 	if ($("#name").val().trim() == "")  { 

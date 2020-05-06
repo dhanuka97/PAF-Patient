@@ -92,7 +92,7 @@ function DeleteResult(no) {
 	});
 }
 
-//Update
+//Update done
 function UpdateResult(obj){
 	var nic = $('#editBox1').text();
 	console.log(nic);

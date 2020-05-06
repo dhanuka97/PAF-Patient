@@ -1,7 +1,7 @@
 package model;
 
 public class Appointment {
-	//This
+
 	public int appointNo;
 	public String  date;
 	public String time;
@@ -44,10 +44,13 @@ public class Appointment {
 	public void setDname(String dname) {
 		this.dname = dname;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Appoinment [appointNo=" + appointNo + ", date=" + date + ", time=" + time + ", location=" + location
 				+ ", pname=" + pname + ", dname=" + dname + "]";
 	}
+	
 	
 }
